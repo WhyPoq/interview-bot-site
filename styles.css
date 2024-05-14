@@ -1,0 +1,191 @@
+/* -------------------- */
+/* Custom properties    */
+/* -------------------- */
+
+:root {
+	/* font-sizes */
+	--fs-400: 1.7rem;
+	--fs-700: 2rem;
+	--fs-900: 3rem;
+
+	/* font-families */
+	--ff-sans: "Inter", sans-serif;
+	--ff-accent: "Roboto", sans-serif;
+	--ff-mono: "Roboto Mono", monospace;
+
+	/* colors */
+	--c-accent-light: 17, 99%, 55%;
+}
+
+/* -------------------- */
+/* Reset                */
+/* -------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+section,
+img {
+	margin: 0;
+	padding: 0;
+	font-weight: inherit;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+body {
+	line-height: 1.5;
+	min-height: 100vh;
+	background-color: hsl(0, 0%, 100%);
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	padding: 0;
+	margin: 0;
+	border: none;
+	color: inherit;
+}
+
+input {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+/* remove animations for people who have turned them off */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* rem scaling */
+html {
+	font-size: 62.5%;
+}
+
+/* -------------------- */
+/* Main styles          */
+/* -------------------- */
+
+body {
+	font-family: var(--ff-sans);
+	font-size: var(--fs-400);
+	padding: 2rem;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	margin-top: 2rem;
+}
+
+.logo {
+	width: 10rem;
+	height: 10rem;
+	margin-bottom: 2rem;
+
+	border-radius: 3rem;
+}
+
+h1 {
+	font-family: var(--ff-mono);
+	font-size: var(--fs-900);
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.bot-explanation {
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.telegram-link {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	justify-content: center;
+
+	font-weight: 500;
+	color: hsl(var(--c-accent-light));
+	text-decoration: underline;
+}
+
+.telegram-link .telegram-logo {
+	padding: 0.5rem;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
+	margin-top: 6rem;
+}
+
+h2 {
+	font-size: var(--fs-700);
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+.telegram-screenshoot {
+	border-radius: 0.5rem;
+	box-shadow: 0rem 0.6rem 1rem 0rem hsl(0, 0%, 0%, 30%);
+}
+
+.categories-screenshots {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 0 2rem;
+}
+
+.categories-screenshots > img {
+	box-shadow: 0rem 0.3rem 0.4rem 0rem hsl(0, 0%, 0%, 30%);
+}
+
+.desktop-category-screenshot {
+	display: none;
+}
+
+.categories .and-more-text {
+	font-weight: 500;
+	margin-top: 1.5rem;
+}
