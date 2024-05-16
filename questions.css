@@ -1,0 +1,75 @@
+.main-page-link {
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+
+	font-family: var(--ff-mono);
+	font-size: var(--fs-600);
+	margin-bottom: 2rem;
+}
+
+.main-page-link-logo {
+	max-width: 4rem;
+	border-radius: 1.5rem;
+	overflow: hidden;
+}
+
+h2 {
+	font-size: var(--fs-600);
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+}
+
+h1 {
+	font-family: var(--ff-accent);
+	font-weight: 700;
+	font-size: var(--fs-900);
+	line-height: 3rem;
+	color: hsl(var(--c-accent-dark));
+	margin-bottom: 4rem;
+}
+
+h3 {
+	font-weight: 600;
+	font-size: var(--fs-750);
+	margin-bottom: 1.5rem;
+}
+
+ol {
+	display: flex;
+	flex-direction: column;
+	gap: 5.5rem;
+
+	list-style: none;
+	counter-reset: num;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 6rem;
+}
+
+ol li {
+	counter-increment: num;
+}
+
+ol li h3::before {
+	content: counter(num) ". ";
+}
+
+.more-question {
+	font-weight: 600;
+	font-size: var(--fs-700);
+	margin-bottom: 1rem;
+}
+
+footer,
+main {
+	max-width: 90rem;
+}
+
+/* for desktop */
+@media (min-width: 67em) {
+	footer,
+	main {
+		margin-left: 20rem;
+	}
+}

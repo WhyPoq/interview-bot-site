@@ -12,7 +12,8 @@
 			rel="stylesheet"
 		/>
 
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="common.css" />
+		<link rel="stylesheet" href="index.css" />
 	</head>
 	<body>
 		<header>
@@ -69,7 +70,7 @@
 							alt="Пример доступных категорий: Frontend разработчик, Full stack разработчик, Backend разработчик, Мобильный разработчик, Аналитик данных, разработчик игр, DevOps инженер, Специалист по кибербезопасности"
 						/>
 					</div>
-					<div class="telegram-screenshoot desktop-category-screenshot">
+					<div class="telegram-screenshoot desktop-only">
 						<img
 							src="./Assets/categories_3.PNG"
 							alt="Пример доступных категорий: Алгоритмы и структуры данных, HTML, CSS, JavaScript, React, Vue, Angular, Next.js, Redux, Typescript, Тестирование, Webpack"
@@ -81,15 +82,18 @@
 		</main>
 
 		<footer>
-			<h2>Ссылка на бота:</h2>
-			<div class="telegram-link">
-				<div class="telegram-logo">
-					<img src="./Assets/telegram_logo.webp" alt="логотип телеграма" />
+			<div class="footer-telegram-link mobile-only">
+				<h2>Ссылка на бота:</h2>
+				<div class="telegram-link">
+					<div class="telegram-logo">
+						<img src="./Assets/telegram_logo.webp" alt="логотип телеграма" />
+					</div>
+					<a href="https://t.me/interview_training_bot"
+						>https://t.me/interview_training_bot</a
+					>
 				</div>
-				<a href="https://t.me/interview_training_bot"
-					>https://t.me/interview_training_bot</a
-				>
 			</div>
+			<a class="all-categories" href="/all_categories.html">Все темы</a>
 		</footer>
 	</body>
 </html>
