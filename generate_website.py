@@ -43,6 +43,8 @@ def generate_categories_page():
 			content="темы, все темы, категории, все категории, собеседование, interview bot, интервью бот"
 		/>
 
+		<link rel="icon" type="image/x-icon" href="/Assets/favicon.ico" />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -138,6 +140,8 @@ def generate_category_page(category_data_filename):
 			name="keywords"
 			content="{html.escape(keywords)}, подготовка к собеседованию, вопросы для собеседования, вопросы на собеседование, собеседование, интервью, interview bot, интервью бот"
 		/>
+
+		<link rel="icon" type="image/x-icon" href="/Assets/favicon.ico" />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
