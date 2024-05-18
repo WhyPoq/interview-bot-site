@@ -58,7 +58,7 @@ def generate_categories_page():
 			<div class="main-page-link">
 				<a href="/" aria-label="Перейти на главную страницу">
 					<div class="main-page-link-logo">
-						<img src="/Assets/logo.jpg" alt="Логотип interview bot" />
+						<img src="/Assets/logo_small.webp" alt="Логотип interview bot" />
 					</div>
 				</a>
 				<p>Interview bot</p>
@@ -153,7 +153,7 @@ def generate_category_page(category_data_filename):
 		<header class="main-page-link">
 			<a href="/" aria-label="Перейти на главную страницу">
 				<div class="main-page-link-logo">
-					<img src="/Assets/logo.jpg" alt="Логотип interview bot" />
+					<img src="/Assets/logo_small.webp" alt="Логотип interview bot" />
 				</div>
 			</a>
 			<p>Interview bot</p>
