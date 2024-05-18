@@ -1,0 +1,107 @@
+- ?Программист | 💻:
+  - Frontend разработчик | 🌐:
+    - Алгоритмы и структуры данных
+    - HTML
+    - CSS | 🎨
+    - Javascript | 📜
+    - React | ⚛️
+    - Vue
+    - Angular
+    - Next.js
+    - Redux
+    - TypeScript | 📘
+    - Тестирование | 🧪
+    - Webpack | 📦
+  - Full Stack разработчик:
+    - Алгоритмы и структуры данных
+    - ?Frontend часть:
+      - HTML + CSS | 🎨
+      - JavaScript | 📜
+      - TypeScript | 📘
+      - React | ⚛️
+      - Vue
+      - Angular
+    - ?Backend часть:
+      - Node.js
+      - TypeScript | 📘
+      - Ruby + Ruby on Rails
+      - PHP + Laravel | 🐘
+      - C# + .NET Core
+      - Базы данных | 🗄️
+    - Webpack | 📦
+    - RESTful Services/APIs | 🌐
+    - Git
+    - Docker | 🐳
+    - Тестирование | 🧪
+  - Backend разработчик:
+    - Алгоритмы и структуры данных
+    - ?Python | 🐍:
+      - ^язык Python
+      - Django
+      - Flask
+    - ?JavaScript | 📜:
+      - ^язык JavaScript
+      - Node.js
+      - Express.js
+    - Java + Spring | ☕
+    - C# + .NET Core
+    - Ruby + Ruby on Rails
+    - PHP + Laravel | 🐘
+    - ?Базы данных | 🗄️:
+      - ^Общие вопросы
+      - PostgreSQL
+      - MySQL
+      - SQL Server
+      - MongoDB
+    - ?Разработка API | 🌐:
+      - RESTful API
+      - GraphQL | 🕸️
+      - SOAP
+    - Тестирование | 🧪
+    - Docker | 🐳
+    - Git
+    - Сетевые протоколы и безопасность | 🔒
+  - Мобильный разработчик | 📱:
+    - Алгоритмы и структуры данных
+    - ?iOS | 🍏:
+      - ^iOS разработка
+      - Swift
+      - Objective-C
+    - ?Android:
+      - ^Android разработка
+      - Kotlin
+      - Java | ☕️
+      - ^+Безопасность | 🔒
+    - Flutter
+    - React Native | ⚛️
+    - Xamarin (C#)
+    - Тестирование | 🧪
+  - Аналитик данных | 📊:
+    - Python | 🐍
+    - R
+    - Базы данных | 🗄️
+    - Статистика | 🔢
+    - Машинное обучение
+    - Большие данные (Big Data)
+    - Визуализация данных | 📈
+  - Разработчик игр | 🎮:
+    - Алгоритмы и структуры данных
+    - Unity
+    - Unreal Engine
+    - ?Графическое программирование:
+      - ^Общие вопросы
+      - OpenGL
+      - DirectX
+  - DevOps инженер | ⚙️:
+    - ^Общие
+    - Git
+    - CI/CD | 🔁
+    - Работа с базами данных | 🗄️
+    - Контейнеризация и оркестрация | 🐳
+    - Облачные платформы | ☁️
+    - Управление инфраструктурой как кодом (IaC) | 🛠️
+    - Безопасность в DevOps (DevSecOps) | 🔒
+  - Специалист по кибербезопасности | 👨‍💻
+- UI/UX Дизайнер | 🎨
+- Специалист по цифровому маркетингу | 📈
+- Проектный менеджер (Project manager) | 📊

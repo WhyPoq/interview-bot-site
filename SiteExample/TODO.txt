@@ -1,0 +1,8 @@
+1) Sitemap
+2) Robots.txt
+3) Tracker
+4) Google search console
+5) Favicon
+6) Smaller images in disk space and from png to webp
+7) Progressive image loading
+8) Larger images (in physical size) on the index page

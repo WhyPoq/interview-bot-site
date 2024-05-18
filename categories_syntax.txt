@@ -1,0 +1,20 @@
+? before the category name - do not include the name of the human readable path
+^ before the category name - replace the current name with the parent's name if the parents name is ignored. 
+    If the parent's name is not ignored, do not add two same names
+^+ before the category name - do not ignore the parents name if it is ignored (with ?). '^+' takes precedence over '^'
+
+- ?Программист | 💻:                 
+  - Мобильный разработчик | 📱:
+    - ?Android:
+      - ^Android разработка
+      - Kotlin
+      - Java | ☕️
+      - ^+Безопасность | 🔒
+
+
+Resulting mapping:
+
+Мобильный_разработчик_Android: Программист_Мобильный разработчик_Android_Android разработка
+Мобильный разработчик_Kotlin: Программист_Мобильный разработчик_Android_Kotlin
+Мобильный разработчик_Java: Программист_Мобильный разработчик_Android_Java
+Мобильный разработчик_Android_Безопасность: Программист_Мобильный разработчик_Android_Безопасность
