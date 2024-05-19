@@ -70,8 +70,8 @@ async def generate(regenerate_all=False):
         filename_form = slugify(full_form)
 
         regenerate_cur = regenerate_all
-        if(os.path.exists(os.path.join(QUESTION_DIR, "-" + f"{filename_form}.json"))):
-            os.remove(os.path.join(QUESTION_DIR, "-" + f"{filename_form}.json"))
+        if(os.path.exists(os.path.join(QUESTION_DIR, "--" + f"{filename_form}.json"))):
+            os.remove(os.path.join(QUESTION_DIR, "--" + f"{filename_form}.json"))
             regenerate_cur = True
         elif not os.path.exists(os.path.join(QUESTION_DIR, f"{filename_form}.json")):
             regenerate_cur = True

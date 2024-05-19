@@ -46,7 +46,7 @@ def generate_categories_page():
 			content="темы, все темы, категории, все категории, собеседование, interview bot, интервью бот"
 		/>
 
-		<link rel="icon" type="image/x-icon" href="/Assets/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/Assets/favicon.ico?v=2" />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -144,7 +144,7 @@ def generate_category_page(category_data_filename):
 			content="{html.escape(keywords)}, подготовка к собеседованию, вопросы для собеседования, вопросы на собеседование, собеседование, интервью, interview bot, интервью бот"
 		/>
 
-		<link rel="icon" type="image/x-icon" href="/Assets/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/Assets/favicon.ico?v=2" />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -267,6 +267,11 @@ def generate():
 	
 	if not os.path.exists(WEBSITE_DIR):
 		os.makedirs(WEBSITE_DIR)
+
+	# check that there are not categories waiting update
+	for category_filename in os.listdir(QUESTION_DIR):
+		if(category_filename.startswith("--")):
+			raise Exception(f"'{category_filename}' is waiting for update. Run 'generate_questions.py' or remove '--' before running site generation")
 
 	# copy all site resources
 	copy_dir(SITE_RES_DIR, WEBSITE_DIR)
