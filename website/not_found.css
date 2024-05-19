@@ -1,0 +1,29 @@
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-top: 3rem;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: var(--fs-900);
+	line-height: 3rem;
+	margin-bottom: 4rem;
+}
+
+.go-main {
+	width: fit-content;
+	font-size: var(--fs-700);
+	padding: 1rem;
+	border: 2px solid hsl(var(--c-accent-light));
+	border-radius: 1rem;
+	text-decoration: none;
+	transition: all 0.2s;
+}
+
+.go-main:hover {
+	background-color: hsl(var(--c-accent-light));
+	color: white;
+}

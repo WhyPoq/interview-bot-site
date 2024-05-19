@@ -1,0 +1,6 @@
+1) Sitemap
+2) Robots.txt
+3) Tracker
+4) Google search console
+5) Make Favicon slightly rounded
+6) Progressive image loading

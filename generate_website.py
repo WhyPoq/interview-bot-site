@@ -151,7 +151,7 @@ def generate_category_page(category_data_filename):
 		/>
 
 		<link rel="stylesheet" href="/common.css" />
-		<link rel="stylesheet" href="/questions.css" />
+		<link rel="stylesheet" href="questions.css" />
 	</head>
 	<body>
 		<header class="main-page-link">
