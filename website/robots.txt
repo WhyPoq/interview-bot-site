@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://interview-training-bot.com/sitemap.xml
+Sitemap: https://www.interview-training-bot.com/sitemap.xml

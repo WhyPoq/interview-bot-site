@@ -2,10 +2,13 @@ import os
 import shutil
 import json
 import html
+from datetime import datetime
 
 QUESTION_DIR = "questions"
 SITE_RES_DIR = "site_resources"
 WEBSITE_DIR = "website"
+
+WEBSITE_URL = "https://interview-training-bot.com"
 
 def copy_dir(source_dir, destination_dir):
 	# Create the destination directory if it doesn't exist
@@ -207,6 +210,54 @@ def generate_category_page(category_data_filename):
 # ================================================================================================
 # ================================================================================================
 
+def sitemap_recent_time(*mtimes):
+	most_recent_mod_time = max(*mtimes)
+	most_recent_mod_datetime = datetime.fromtimestamp(most_recent_mod_time)
+	return most_recent_mod_datetime.strftime('%Y-%m-%d')
+
+def generate_sitemap():
+	common_css_mtime = os.path.getmtime(os.path.join(SITE_RES_DIR, "common.css"))
+	index_html_mtime = os.path.getmtime(os.path.join(SITE_RES_DIR, "index.html"))
+	index_css_mtime = os.path.getmtime(os.path.join(SITE_RES_DIR, "index.css"))
+	categories_css_mtime = os.path.getmtime(os.path.join(SITE_RES_DIR, "categories", "categories.css"))
+	questions_css_mtime = os.path.getmtime(os.path.join(SITE_RES_DIR, "categories", "questions.css"))
+
+	with open(os.path.join(WEBSITE_DIR, "sitemap.xml"), "w", encoding="utf-8") as f:
+		f.write(
+f"""\
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>{WEBSITE_URL}/index.html</loc>
+    	<lastmod>{sitemap_recent_time(common_css_mtime, index_html_mtime, index_css_mtime)}</lastmod>
+  	</url>
+  	<url>
+    	<loc>{WEBSITE_URL}/categories/index.html</loc>
+    	<lastmod>{sitemap_recent_time(common_css_mtime, categories_css_mtime)}</lastmod>
+		<priority>0.3</priority>
+  	</url>
+"""
+		)
+		
+		# Iterate over all categories
+		for category_filename in os.listdir(QUESTION_DIR):
+			question_data_mtime = os.path.getmtime(os.path.join(QUESTION_DIR, category_filename))
+			f.write(
+f"""\
+	<url>
+		<loc>{WEBSITE_URL}/categories/{category_filename[:-4]}html</loc>
+		<lastmod>{sitemap_recent_time(common_css_mtime, questions_css_mtime, question_data_mtime)}</lastmod>
+		<priority>0.8</priority>
+	</url>
+"""		
+		) 
+
+		f.write(
+f"""\
+</urlset>\
+"""		
+		) 
+
 def generate():
 	if not os.path.exists(QUESTION_DIR):
 		raise Exception(f"Directory for questions '{QUESTION_DIR}' does not exist")
@@ -231,6 +282,9 @@ def generate():
 	# Iterate over all categories
 	for category_filename in os.listdir(QUESTION_DIR):
 		generate_category_page(category_filename)
+
+
+	generate_sitemap()
 
 
 

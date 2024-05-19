@@ -1,3 +1,9 @@
+"""
+    Generates questions to questions folder
+    By default only updates files staratingwith '-' or not existing files
+    Add console argument 'all' to update all the questions
+"""
+
 import human_format_cat_gen
 
 import os
@@ -7,6 +13,7 @@ import re
 import json
 import aiohttp
 import asyncio
+import sys
 
 
 QUESTION_DIR = "questions"
@@ -49,7 +56,7 @@ async def get_questions_from_api(client_session, category):
         raise Exception("Error getting response, status code NOT 200") 
 
 
-async def generate():
+async def generate(regenerate_all=False):
     if os.path.exists(".env"):
         load_dotenv(".env", override=True)
 
@@ -62,19 +69,31 @@ async def generate():
     for human_form, full_form in categories_dict.items():
         filename_form = slugify(full_form)
 
-        file_contents = {
-            "category_full_form": full_form,
-            "category_human_form": human_form,
-            "category_filename_form": filename_form,
-            "questions": await get_questions_from_api(client_session, full_form)
-        }
+        regenerate_cur = regenerate_all
+        if(os.path.exists(os.path.join(QUESTION_DIR, "-" + f"{filename_form}.json"))):
+            os.remove(os.path.join(QUESTION_DIR, "-" + f"{filename_form}.json"))
+            regenerate_cur = True
+        elif not os.path.exists(os.path.join(QUESTION_DIR, f"{filename_form}.json")):
+            regenerate_cur = True
 
-        with open(os.path.join(QUESTION_DIR, f"{filename_form}.json"), "w", encoding="utf-8") as f:
-            json.dump(file_contents, f, ensure_ascii=False, indent=4)
+        if(regenerate_cur):
+            file_contents = {
+                "category_full_form": full_form,
+                "category_human_form": human_form,
+                "category_filename_form": filename_form,
+                "questions": await get_questions_from_api(client_session, full_form)
+            }
+
+            with open(os.path.join(QUESTION_DIR, f"{filename_form}.json"), "w", encoding="utf-8") as f:
+                json.dump(file_contents, f, ensure_ascii=False, indent=4)
 
     await client_session.close()
 
 
 if __name__ == "__main__":
+    regenerate_all = False
+    if(len(sys.argv) > 1 and sys.argv[1] == "all"):
+        regenerate_all = True
+
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(generate())
+    loop.run_until_complete(generate(regenerate_all))
