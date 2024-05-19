@@ -163,8 +163,10 @@ def generate_category_page(category_data_filename):
 			<p>Interview bot</p>
 		</header>
 		<main>
-			<h2>Вопросы для собеседования на тему</h2>
-			<h1>{html.escape(h1_text)}</h1>
+			<h1>
+				<div class="weak-h1">Вопросы для собеседования на тему</div>
+				<div class="strong-h1">{html.escape(h1_text)}</div>
+			</h1>
 
 			<ol>
 """
@@ -174,7 +176,7 @@ def generate_category_page(category_data_filename):
 		right_answer = question["right_answer"]
 		file_content += f"""\
 				<li>
-					<h3>{html.escape(question_text)}</h3>
+					<h2>{html.escape(question_text)}</h2>
 					<p>{html.escape(right_answer)}</p>
 				</li>
 """

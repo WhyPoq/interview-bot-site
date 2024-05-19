@@ -14,13 +14,13 @@
 	overflow: hidden;
 }
 
-h2 {
+.weak-h1 {
 	font-size: var(--fs-600);
 	font-weight: 600;
 	margin-bottom: 0.5rem;
 }
 
-h1 {
+.strong-h1 {
 	font-family: var(--ff-accent);
 	font-weight: 700;
 	font-size: var(--fs-900);
@@ -29,7 +29,7 @@ h1 {
 	margin-bottom: 4rem;
 }
 
-h3 {
+h2 {
 	font-weight: 600;
 	font-size: var(--fs-750);
 	margin-bottom: 1.5rem;
@@ -51,7 +51,7 @@ ol li {
 	counter-increment: num;
 }
 
-ol li h3::before {
+ol li h2::before {
 	content: counter(num) ". ";
 }
 
