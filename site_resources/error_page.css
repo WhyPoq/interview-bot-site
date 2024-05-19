@@ -2,21 +2,22 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	text-align: center;
-	margin-top: 3rem;
+	margin-top: 10rem;
 }
 
 h1 {
 	font-weight: 700;
-	font-size: var(--fs-900);
+	font-size: var(--fs-750);
 	line-height: 3rem;
-	margin-bottom: 4rem;
+	margin-bottom: 3rem;
 }
 
 .go-main {
 	width: fit-content;
-	font-size: var(--fs-700);
-	padding: 1rem;
+	font-size: var(--fs-400);
+	padding: 0.5rem 1rem;
 	border: 2px solid hsl(var(--c-accent-light));
 	border-radius: 1rem;
 	text-decoration: none;
@@ -26,4 +27,20 @@ h1 {
 .go-main:hover {
 	background-color: hsl(var(--c-accent-light));
 	color: white;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+/* for desktop */
+@media (min-width: 60em) {
+	h1 {
+		font-size: var(--fs-900);
+	}
+
+	.go-main {
+		font-size: var(--fs-700);
+		padding: 0.7rem 1.5rem;
+	}
 }
