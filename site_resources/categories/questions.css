@@ -53,6 +53,11 @@ ol li {
 
 ol li h2::before {
 	content: counter(num) ". ";
+	color: hsl(var(--c-accent-dark));
+}
+
+ol li p {
+	white-space: pre-wrap;
 }
 
 .more-question {

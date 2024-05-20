@@ -211,7 +211,10 @@ def generate_category_page(category_data_filename):
 # ================================================================================================
 
 def sitemap_recent_time(*mtimes):
-	most_recent_mod_time = max(*mtimes)
+	if(len(mtimes) == 1):
+		most_recent_mod_time = mtimes[0]
+	else:
+		most_recent_mod_time = max(*mtimes)
 	most_recent_mod_datetime = datetime.fromtimestamp(most_recent_mod_time)
 	return most_recent_mod_datetime.strftime('%Y-%m-%d')
 
@@ -246,7 +249,7 @@ f"""\
 f"""\
 	<url>
 		<loc>{WEBSITE_URL}/categories/{category_filename[:-4]}html</loc>
-		<lastmod>{sitemap_recent_time(common_css_mtime, questions_css_mtime, question_data_mtime)}</lastmod>
+		<lastmod>{sitemap_recent_time(question_data_mtime)}</lastmod>
 		<priority>0.8</priority>
 	</url>
 """		

@@ -1,27 +1,23 @@
 {
-    "category_full_form": "Программист_Backend разработчик_JavaScript_Express.js",
-    "category_human_form": "Backend разработчик_Express.js",
-    "category_filename_form": "программист_backend-разработчик_javascript_expressjs",
-    "questions": [
-        {
-            "question": "Как обрабатывать параметры URL в Express.js?",
-            "right_answer": "Параметры URL могут быть получены с помощью req.params. Вот пример: app.get('/users/:id', (req, res) => { const userId = req.params.id; res.send(`User ID: ${userId}`); });"
-        },
-        {
-            "question": "Как создать базовое приложение Express.js?",
-            "right_answer": "Для создания базового приложения Express.js необходимо установить Express.js с помощью npm, а затем создать экземпляр приложения Express."
-        },
-        {
-            "question": "Как определяются маршруты в Express.js?",
-            "right_answer": "В Express.js маршруты определяются с использованием методов app.get(), app.post(), app.put(), app.delete() или app.use()."
-        },
-        {
-            "question": "Что такое middleware в Express.js и как оно используется?",
-            "right_answer": "Middleware функции в Express.js - это функции, которые имеют доступ к объектам req, res и next. Они могут изменять объекты запроса и ответа, выполнять код и вызывать следующую middleware функцию в стеке. Middleware используется для задач, таких как логирование, аутентификация, обработка ошибок и т. д."
-        },
-        {
-            "question": "Что такое Express.js и каковы его основные особенности?",
-            "right_answer": "Express.js - популярный веб-фреймворк для Node.js. Он предоставляет минималистичный и гибкий набор функций для создания веб-приложений и API. Некоторые ключевые особенности Express.js включают маршрутизацию, поддержку промежуточного программного обеспечения, интеграцию с шаблонными движками и упрощенную обработку HTTP-запросов и ответов."
-        }
-    ]
+	"category_full_form": "Программист_Backend разработчик_JavaScript_Express.js",
+	"category_human_form": "Backend разработчик_Express.js",
+	"category_filename_form": "программист_backend-разработчик_javascript_expressjs",
+	"questions": [
+		{
+			"question": "Что такое Express.js и каковы его основные особенности?",
+			"right_answer": "Express.js - популярный веб-фреймворк для Node.js. Он предоставляет минималистичный и гибкий набор функций для создания веб-приложений и API. Некоторые ключевые особенности Express.js включают маршрутизацию, поддержку промежуточного программного обеспечения, интеграцию с шаблонными движками и упрощенную обработку HTTP-запросов и ответов."
+		},
+		{
+			"question": "Как обрабатывать параметры URL в Express.js?",
+			"right_answer": "Параметры URL могут быть получены с помощью req.params. Вот пример: app.get('/users/:id', (req, res) => { const userId = req.params.id; res.send(`User ID: ${userId}`); });"
+		},
+		{
+			"question": "Как определяются маршруты в Express.js?",
+			"right_answer": "В Express.js маршруты определяются с использованием методов app.get(), app.post(), app.put(), app.delete() или app.use()."
+		},
+		{
+			"question": "Что такое middleware в Express.js и как оно используется?",
+			"right_answer": "Middleware функции в Express.js - это функции, которые имеют доступ к объектам req, res и next. Они могут изменять объекты запроса и ответа, выполнять код и вызывать следующую middleware функцию в стеке. Middleware используется для задач, таких как логирование, аутентификация, обработка ошибок и т. д."
+		}
+	]
 }

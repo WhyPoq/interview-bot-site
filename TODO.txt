@@ -1,4 +1,4 @@
-3) Tracker
-4) Google search console
-5) Make Favicon slightly rounded
-6) Progressive image loading
+1) Separate crawlers data in stats
+2) Progressive image loading
+3) gzip ???
+4) Delete gh-pages branch
