@@ -3,6 +3,7 @@ import shutil
 import json
 import html
 from datetime import datetime
+import random
 
 QUESTION_DIR = "questions"
 SITE_RES_DIR = "site_resources"
@@ -114,22 +115,34 @@ def generate_category_page(category_data_filename):
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-"""
+"""	
+	description_phrases = [
+		"Часто задаваемые вопросы с правильными ответами на собеседовании",
+		"Самые популярные вопросы, которые задают на собеседовании",
+		"Можете ли вы ответить на эти вопросы",
+		"Вопросы для подготовки к собеседованию"
+	]
+
+	description_phrase = description_phrases[random.randrange(len(description_phrases))]
+
+	preview_questions_string = ""
+	for question in category_questions[:2]:
+		preview_questions_string += " " + question["question"] 
 
 	if(category_main_name != None):
 		file_content += f"""\
 		<title>{html.escape(category_main_name)} топ {len(category_questions)} вопросов для {html.escape(position_name)} на собеседовании</title>
 		<meta
 			name="description"
-			content="Часто задаваемые вопросы с правильными ответами на собеседовании на позицию {html.escape(position_name)} по теме {html.escape(category_main_name)}"
+			content="{description_phrase} на позицию {html.escape(position_name)} по теме {html.escape(category_main_name)}.{preview_questions_string}"
 		/>
 """
 	else:
 		file_content += f"""\
-		<title>топ {len(category_questions)} вопросов для {html.escape(position_name)} на собеседовании</title>
+		<title>Топ {len(category_questions)} вопросов для {html.escape(position_name)} на собеседовании</title>
 		<meta
 			name="description"
-			content="Часто задаваемые вопросы с правильными ответами на собеседовании на позицию {html.escape(position_name)}"
+			content="{description_phrase} на позицию {html.escape(position_name)}.{preview_questions_string}"
 		/>
 """
 		
@@ -223,7 +236,9 @@ def generate_sitemap():
 	index_html_mtime = os.path.getmtime(os.path.join(SITE_RES_DIR, "index.html"))
 	index_css_mtime = os.path.getmtime(os.path.join(SITE_RES_DIR, "index.css"))
 	categories_css_mtime = os.path.getmtime(os.path.join(SITE_RES_DIR, "categories", "categories.css"))
-	questions_css_mtime = os.path.getmtime(os.path.join(SITE_RES_DIR, "categories", "questions.css"))
+
+	# set the date to the most recent update in html structure
+	questions_html_update_time = datetime.timestamp(datetime.strptime("21-05-2024", '%d-%m-%Y'))
 
 	with open(os.path.join(WEBSITE_DIR, "sitemap.xml"), "w", encoding="utf-8") as f:
 		f.write(
@@ -249,7 +264,7 @@ f"""\
 f"""\
 	<url>
 		<loc>{WEBSITE_URL}/categories/{category_filename[:-4]}html</loc>
-		<lastmod>{sitemap_recent_time(question_data_mtime)}</lastmod>
+		<lastmod>{sitemap_recent_time(question_data_mtime, questions_html_update_time)}</lastmod>
 		<priority>0.8</priority>
 	</url>
 """		
