@@ -4,6 +4,7 @@ import json
 import html
 from datetime import datetime
 import random
+from urllib.parse import quote
 
 QUESTION_DIR = "questions"
 SITE_RES_DIR = "site_resources"
@@ -263,7 +264,7 @@ f"""\
 			f.write(
 f"""\
 	<url>
-		<loc>{WEBSITE_URL}/categories/{category_filename[:-4]}html</loc>
+		<loc>{WEBSITE_URL}/categories/{quote(category_filename[:-4])}html</loc>
 		<lastmod>{sitemap_recent_time(question_data_mtime, questions_html_update_time)}</lastmod>
 		<priority>0.8</priority>
 	</url>
